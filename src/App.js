@@ -10,7 +10,10 @@ export default function App() {
         <footer className="text-center">
           {" "}
           This project is open-sourced by Annie Colbert and is{" "}
-          <a href="open-sourced" target="blank">
+          <a
+            href="open-sourced"
+            target="https://github.com/colberta23/react-weather-application"
+          >
             open-sourced
           </a>
         </footer>
