@@ -1,5 +1,7 @@
 import React from "react";
-import WeatherIcon from "./WeatherIcon";
+
+import WeatherIcon from "./WeatherIcon"; // eslint-disable-next-line
+console.log("eslint is disabled for the current line");
 
 export default function WeatherForecastDay(props) {
   function maxTemperature() {
