@@ -1,6 +1,5 @@
 import React from "react";
-import WeatherIcon from "./WeatherIcon"; // eslint-disable-next-line
-console.log("eslint is disabled for the current line");
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherForecastDay(props) {
   function maxTemperature() {
@@ -13,10 +12,18 @@ export default function WeatherForecastDay(props) {
     return `${temperature}°`;
   }
 
+  function day() {
+    let date = new Date(props.data.dt * 1000);
+    let day = date.getDay();
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    return days[day];
+  }
+
   return (
     <div className="WeatherForecastDay">
-      <div className="WeatherForecast-day"> {props[0].dt}</div>
-      <WeatherIcon code={props[0].weather[0].icon} size={42} />
+      <div className="WeatherForecast-day"> {day()}</div>
+      <WeatherIcon code={props.data.weather[0].icon} size={42} />
+
       <div className="WeatherForecast-temperature">
         <span className="WeatherForecast-max"> {maxTemperature()}</span>
         <span className="WeatherForecast-min"> {minTemperature()}</span>
